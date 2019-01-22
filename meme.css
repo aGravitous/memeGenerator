@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(to bottom, aqua, green);
+}
+
+.flex-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.button {
+    text-decoration: none;
+    background-color: orangered;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+input[type=text], select {
+    width: 90%;
+    padding: 10px;
+    margin: 4px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+#item1 { grid-area: header;
+    font-size: 40px;
+}
+.item2 { grid-area: left; }
+#item3 { grid-area: center;
+}
+.item4 { grid-area: right; }
+.item5 { grid-area: buttons; }
+.item6 { grid-area: footer}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        'header header header header header header header'
+        'left left center center center right right'
+        'left left buttons buttons buttons right right'
+        'footer footer footer footer footer footer footer';
+    grid-gap: 10px;
+    background-color: orangered;
+    padding: 10px;
+}
+.grid-container > div {
+    background-color: rgb(255, 136, 0);
+    text-align: center;
+    font-size: 25px;
+    font-family: impact;
+    padding: 20px 0;
+}
