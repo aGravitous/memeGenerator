@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-    background-image: linear-gradient(to bottom, aqua, green);
+    background-color: rgb(160, 160, 160);
 }
 
 .flex-buttons {
@@ -13,14 +13,14 @@ body {
 }
 .button {
     text-decoration: none;
-    background-color: orangered;
+    background-color: lightskyblue;
     color: black;
     margin: 10px;
     padding: 10px;
     font-size: 18px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
-input[type=text], select {
+input[type=text], input[type=url], select {
     width: 90%;
     padding: 10px;
     margin: 4px;
@@ -32,12 +32,15 @@ input[type=text], select {
 #item1 { grid-area: header;
     font-size: 40px;
 }
-.item2 { grid-area: left; }
+#item2 { grid-area: left; }
 #item3 { grid-area: center;
 }
-.item4 { grid-area: right; }
-.item5 { grid-area: buttons; }
-.item6 { grid-area: footer}
+#item4 { grid-area: right;
+    overflow-y: scroll;
+    height: 100%;
+}
+#item5 { grid-area: buttons; }
+#item6 { grid-area: footer}
 
 .grid-container {
     display: grid;
@@ -47,11 +50,11 @@ input[type=text], select {
         'left left buttons buttons buttons right right'
         'footer footer footer footer footer footer footer';
     grid-gap: 10px;
-    background-color: orangered;
+    background-color: blue;
     padding: 10px;
 }
 .grid-container > div {
-    background-color: rgb(255, 136, 0);
+    background-color: rgba(245, 245, 245, 0.959);
     text-align: center;
     font-size: 25px;
     font-family: impact;
