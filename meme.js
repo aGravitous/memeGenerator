@@ -1,10 +1,4 @@
-// Accept image from url.
-// Allow top and bottom text to be edited, display on central image.
-// Click done moves to collection. Export sends new image to desktop.
-// Thumbnail collection: clicking on one sends it back to center for more editing or export.
-// Reset for edit window simply clears text.
-// Reset for collection clears all.
-// Importing a new image before done clears and replaces.
+window.onload = function(){
 
 var memeCanvas = document.getElementById('meme-canvas');
 var topText = document.getElementById('top-text');
@@ -34,3 +28,5 @@ makeMeme.addEventListener('click', function () {
     }
     reader.readAsDataURL(imgUrl);
 });
+
+}
