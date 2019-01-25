@@ -1,32 +1,37 @@
+// Styling notes: add scrollbar to results
+// Add delete to images
+// Get words in the right place.
+
+
 window.onload = function(){
 
-var memeCanvas = document.getElementById('meme-canvas');
+// Get information from page.
+
 var topText = document.getElementById('top-text');
 var bottomText = document.getElementById('bottom-text');
 var imgUrl = document.getElementById('img-url');
-var makeMeme = document.getElementById('make-meme');
+var form = document.querySelector("form");
 
-canvas.width = canvas.height = 0;
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+    var HTMLtoAppend = `
+    <div class="meme">
+        <span>${topText.value}</span>
+        <img src="${imgUrl.value}" alt="Your Image"></img>
+        <span>${bottomText.value}</span>
+    </div>
+    `;
+    var button = document.createElement('button');
+    button.innerText = "Remove me!";
+    button.addEventListener('click', function(event){
+        event.target.parentElement.remove()
+    })
+    var newDiv = document.createElement('div');
 
-ctx = canvas.getContext('2d');
-
-
-function generateMeme(img, top, bottom){
-    canvas.height = img.height;
-    canvas.width = img.width;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, 0, 0);
-}
-
-makeMeme.addEventListener('click', function () {
-    let reader = new FileReader();
-    reader.onload = function () {
-        let img = new Image;
-        img.src = reader.result;
-        makeMeme(img, topText, bottomText);
-    }
-    reader.readAsDataURL(imgUrl);
+    newDiv.innerHTML = HTMLtoAppend;
+    newDiv.append(button);
+    document.getElementById('item3').append(newDiv);
 });
 
+// This last curly bracket is for onload!
 }
