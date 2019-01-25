@@ -6,29 +6,24 @@ body {
     height: 100vh
 }
 
-.flex-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
 .button {
     text-decoration: none;
     background-color: lightskyblue;
     color: black;
     margin: 10px 5px 0px 5px;
     padding: 10px;
-    font-size: 18px;
+    font-size: 15px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-input[type=text], input[type=url], select {
+input[type=text], input[type=url] {
     width: 90%;
     padding: 10px;
     margin: 4px;
     display: inline-block;
     border: 1px solid black;
     border-radius: 4px;
+    font-size: 2vh;
 }
 
 #item1 { grid-area: header;
@@ -36,7 +31,6 @@ input[type=text], input[type=url], select {
 }
 #item2 { grid-area: left; }
 #item3 { grid-area: center;
-    overflow-y: scroll;
     height: 100%;
 }
 #item4 { grid-area: footer}
@@ -51,6 +45,7 @@ input[type=text], input[type=url], select {
     grid-gap: 10px;
     background-color: blue;
     padding: 10px;
+    height: 98vh;
 }
 .grid-container > div {
     background-color: rgba(245, 245, 245, 0.959);
@@ -58,4 +53,26 @@ input[type=text], input[type=url], select {
     font-size: 25px;
     font-family: impact;
     padding: 20px 0;
+}
+
+.meme {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-text-stroke: white 1px;
+    align-self: center;
+    position: relative;
+    text-align: center;
+}
+
+#top-words {
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    transform: translate(-50%, 0);
+}
+
+#bottom-words {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translate(-50%, 0);
 }
